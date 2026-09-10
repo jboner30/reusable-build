@@ -23,8 +23,8 @@ function createPulse(x, y) {
     const hue = colorObj.h;
     const saturation = colorObj.s;
     
-    // Number of particles in the ring
-    const particleCount = 36;
+    // Number of particles in the ring - create a full circle
+    const particleCount = 32;
     
     // Create particles in a ring formation
     for (let i = 0; i < particleCount; i++) {
@@ -33,7 +33,7 @@ function createPulse(x, y) {
         
         // Evenly distributed angles around a ring
         const angle = (Math.PI * 2 * i) / particleCount;
-        const distance = 80;
+        const distance = 100;
         
         // Initial position is slightly offset from the origin
         const initialX = Math.cos(angle) * 5;
@@ -54,8 +54,8 @@ function createPulse(x, y) {
         particle.style.setProperty('--ty', ty + 'px');
         particle.style.boxShadow = `0 0 8px ${color}`;
         
-        // Animation duration for the pulse
-        const duration = 0.6;
+        // Animation duration for the pulse - slower and calmer
+        const duration = 1.2;
         particle.style.animationDuration = duration + 's';
         
         container.appendChild(particle);
@@ -76,12 +76,12 @@ document.addEventListener('mousedown', (e) => {
     // Create initial pulse immediately
     createPulse(currentMouseX, currentMouseY);
     
-    // Set up interval for subsequent pulses every 500ms
+    // Set up interval for subsequent pulses every 750ms
     pulseInterval = setInterval(() => {
         if (isMouseDown) {
             createPulse(currentMouseX, currentMouseY);
         }
-    }, 500);
+    }, 750);
 });
 
 // Mouse move - update position
@@ -114,7 +114,7 @@ document.addEventListener('touchstart', (e) => {
         if (isMouseDown) {
             createPulse(currentMouseX, currentMouseY);
         }
-    }, 500);
+    }, 750);
 });
 
 document.addEventListener('touchmove', (e) => {

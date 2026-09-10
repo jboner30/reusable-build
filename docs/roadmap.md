@@ -1,1 +1,1 @@
-To make a simple webpage that shoots off fireworks when the user clicks. 
+To make a simple webpage that pulses when the user clicks. 
