@@ -1,2 +1,3 @@
 Initial creation
-Changed to pulse instead of firework
+Changed to solid pulse instead of fireworks
+Changed background to black
